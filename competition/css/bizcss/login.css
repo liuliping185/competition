@@ -1,0 +1,24 @@
+
+.top-div{
+	background: #34a9df;
+	background-size:100%;
+	width: 100%;
+	height: 360px;
+}
+.top-div h1 {
+	color:#fff;
+	font-size:32px;
+	text-align:center;
+	line-height:360px;
+	margin:0
+}
+.login {
+	background: #fefefe;
+	margin-top: -135px;
+	border: 1px solid #e7e7e7;
+	border-image: none;
+	padding: 40px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 1px 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 1px 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+}

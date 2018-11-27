@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>用户列表</title>
+		<link rel="stylesheet" href="../plugins/bootstrap-table/bootstrap-table.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common/common.css"/>
+		<link rel="stylesheet" media="screen" href="../css/common/bootstrap.css"/>
+		<link rel="stylesheet" media="screen" href="../css/bizcss/usermagage.css"/>
+		
+	</head>
+	<body>
+		<div>
+			<iframe id="headeriframe" src= "../commonhtml/header.html"  frameborder= "0" width="100%">
+			</iframe>
+		</div>
+		
+		<div id="container">
+			<!--<div id="left">-->
+				<!--<div class="leftsbtn childbtn">用户管理</div>-->
+				<!--<div id="lefttitlebtn">
+					<script id="list-tmpl" type="text/template">
+						{{ for (var i = 0; i < it.length; i++) { }}	
+							<div class="leftsbtn childbtn">{{=it[i].name}}</div>
+						{{ } }}
+					</script>
+				</div>-->
+			<!--</div>-->
+			<div id="content">
+				<div id="curdirectory">用户列表</div>
+				<div>
+					<div class="main">
+						<div class="panel panel-default">
+							<div class="panel-body">
+									<div class="form-group">
+										<label class="control-label" for="">手机号</label>
+										<input type="text" class="form-control" id="search_actName">
+										<button type="button" class="btn btn-primary" onclick="search()"><i class="fa fa-search"></i>查询</button>
+										<!--<button id="addBtn" class="btn btn-default" onclick="add()">
+											<span class="glyphicon glyphicon-plus"></span>
+											 添加
+										</button>
+										<button id="deleteBtn" class="btn btn-default" onclick="del()">
+											<span class="glyphicon glyphicon-remove"></span>
+											删除
+										</button>-->
+									</div>
+								<table id="dataGrid" style="min-width:500px;"></table>
+								</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../js/common/jquery.min.js"></script>
+	<script src="../js/common/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/common/bootstrap-table.js"></script>
+	<script type="text/javascript" src="../js/common/bootstrap-table-zh-CN.min.js"></script>
+	<script src="../js/common/doT.min.js"></script>
+	<script type="text/javascript" src="../js/common/layer/layer.js" ></script>
+	<script src="../js/common/common.js"></script>
+	<script src="../js/bizjs/usermanage.js"></script>
+</html>

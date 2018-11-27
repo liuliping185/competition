@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/common/header.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common/common.css"/>
+	</head>
+	<body>
+
+		<div class="nav">
+			<img src="../img/logo.png" />
+			<div class="headernav">
+				<ul>
+					<li onclick="lunboinfo()">轮播管理</li>
+					<li onclick="registrationList()">赛事管理</li>
+					<li onclick="liveBroadcast()">直播管理</li>
+					<li onclick="news()">新闻管理</li>
+					<li onclick="order()">订单管理</li>
+					<li onclick="usermagage()">用户管理</li>
+				</ul>
+			</div>
+			<div class="user">
+				<div class="avatar">
+					<img src="../img/avatar.png" />
+				</div>
+				<div class="loginbtn">
+					<span onclick="login()">登录</span>
+				</div>
+				
+			</div>
+		</div>
+		
+	
+	<script src="../js/common/jquery.min.js"></script>
+	<script src="../js/common/common.js"></script>
+	
+	</body>
+	<script>
+		$(function(){
+			if(localStorage.islogin){
+				$(".loginbtn").html('<span onclick="signout()">退出</span>');
+			}else{
+				window.parent.location.href="../login.html";
+			}
+		})
+		
+		function liveBroadcast(){
+			window.parent.location.href="../bizhtml/liveBroadcast.html";
+		}
+		
+		function registrationList(){
+			window.parent.location.href="../index.html";
+		}
+		
+		function news(){
+			window.parent.location.href="../bizhtml/news.html";
+		}
+		
+		function usermagage(){
+			window.parent.location.href="../bizhtml/usermagage.html";
+		}
+		
+		function order(){
+			window.parent.location.href="../bizhtml/order.html";
+		}
+		
+		function login(){
+			window.parent.location.href="../login.html";
+		}
+		
+		function lunboinfo(){
+			window.parent.location.href="../bizhtml/lunbo.html";
+		}
+	</script>
+</html>

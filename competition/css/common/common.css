@@ -1,0 +1,190 @@
+body{background: url(images/baidu_demo.png) #fff top center no-repeat;padding: 0px;margin: 0px;font-size: 12px;font-family: "微软雅黑";}
+body{
+	background-color: #38aae0;
+}
+
+hr{
+	border:1px dashed #E8E8E8;
+}
+
+#mergeDiv{
+	display: none;
+}
+
+.updatehead{
+	background: #F0EFEE;
+	color: #000;
+	width:100px;
+	height: 30px;
+	border: none;
+	line-height: 18px;
+	text-align: center;
+}
+
+.updatehead:hover{
+	background: #669933;
+	color: #fff;
+}
+
+.uploadFileName{
+	font-size: 16px;
+	color: #669933;
+}
+
+.lefttitle{
+	text-align: right;
+}
+
+#info{
+	width: 60%;
+	margin:50px 0 80px 20%;
+	border: solid #E8E8E8 1px;
+	padding: 5% 5%;
+	border-radius: 10px;
+	-moz-box-shadow:2px 2px 5px #9D9D9D;
+	-webkit-box-shadow:2px 2px 5px #9D9D9D;
+    box-shadow:2px 2px 5px #9D9D9D;
+}
+
+.title{
+	text-align: center;
+	font-size: 20px;
+	color: #0044CC;
+	font-weight: 500;
+	margin: 50px 0;
+}
+
+.updateheadimg{
+	display: none;
+}
+	.link{text-align: right;line-height: 20px;padding-right: 40px;}
+	
+	.ui-dialog{ 
+		width: 380px;height: auto;display: none;
+		position: absolute;z-index: 9000;
+		top: 0px;left: 0px;
+		border: 1px solid #D5D5D5;background: #fff;
+	}
+
+	.ui-dialog a{text-decoration: none;}
+
+	.ui-dialog-title{
+		height: 48px;line-height: 48px; padding:0px 20px;color: #535353;font-size: 16px;
+		border-bottom: 1px solid #efefef;background: #f5f5f5;
+		cursor: move;
+		user-select:none;
+	}
+	.ui-dialog-closebutton{
+		width: 16px;height: 16px;display: block;
+		position: absolute;top: 12px;right: 20px;
+		background: url(images/close_def.png) no-repeat;cursor: pointer;
+
+	}
+	.ui-dialog-closebutton:hover{background:url(images/close_hov.png);}
+
+	.ui-dialog-content{
+		padding: 15px 20px;
+	}
+	.ui-dialog-pt15{
+		padding-top: 15px;
+	}
+	.ui-dialog-l40{
+		height: 40px;line-height: 40px;
+		text-align: right;
+	}
+
+	.ui-dialog-input{
+		width: 100%;height: 40px;
+		margin: 0px;padding:0px;
+		border: 1px solid #d5d5d5;
+		font-size: 16px;color: #c1c1c1;
+		text-indent: 25px;
+		outline: none;
+	}
+	.ui-dialog-input-username{
+		background: url(images/input_username.png) no-repeat 2px ;
+	}
+
+	.ui-dialog-input-password{
+		background: url(images/input_password.png) no-repeat 2px ;
+	}
+	.ui-dialog-submit{
+		width: 100%;height: 50px;background: #3b7ae3;border:none;font-size: 16px;color: #fff;
+		outline: none;text-decoration: none;
+		display: block;text-align: center;line-height: 50px;
+	}
+	.ui-dialog-submit:hover{
+		background: #3f81b0;
+	}
+
+	.ui-mask{ 
+		width: 100%;height:100%;background: #000;
+		position: absolute;top: 0px;height: 0px;z-index: 8000;
+		opacity:0.4; filter: Alpha(opacity=40);
+	}
+
+*{
+	margin:0;
+	padding:0;
+}
+
+.visibilityinfo{
+	visibility: hidden;
+}
+
+ul li{
+	list-style: none;
+}
+
+#headeriframe{
+	overflow: hidden; 
+	height: 123px;
+}
+
+#container{
+	display: flex;
+	flex-direction: row;
+	/*align-items:flex-start;*/
+	margin: 0 10%;
+}
+
+#left{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+	margin: 0 10px 0 0;
+	background: #9edffa;
+	padding: 3% 0;
+}
+
+#left>#curtitle{
+	flex: 1;
+}
+
+#left>.titlebtn{
+	background-color: #38aae0;
+	color: #fff;
+	font-weight: 700;
+}
+
+.leftsbtn{
+	margin: 10px 20px;
+	padding: 2px 20px;
+	border-radius: 5px;
+	background-color: #E5E5E5;
+}
+
+#content{
+	flex:3;
+	/*background: deeppink;*/
+}
+
+#content>#curdirectory{
+	background: #9edffa;
+	padding: 3px 0 3px 10px;
+	font-size: 20px;
+	color: #fff;
+	font-weight: 700;
+}
+

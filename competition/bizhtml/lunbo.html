@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>轮播</title>
+		<link rel="stylesheet" href="../css/common/bootstrap.min.css"/>
+		<link rel="stylesheet" media="screen" href="../css/common/bootstrap.css"/>
+		<link rel="stylesheet" href="../plugins/bootstrap-table/bootstrap-table.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../plugins/bootstrapValidator/css/bootstrapValidator.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/bizcss/lunbo.css"/>
+	</head>
+	<body>
+		<div>
+			<iframe id="headeriframe" src= "../commonhtml/header.html"  frameborder= "0" width="100%">
+			</iframe>
+		</div>
+		
+		<div id="container">
+			<!--<div id="left">-->
+				<!--<div class="leftsbtn childbtn">直播管理</div>-->
+				<!--<div id="lefttitlebtn">
+					<script id="list-tmpl" type="text/template">
+						{{ for (var i = 0; i < it.length; i++) { }}	
+							<div class="leftsbtn childbtn">{{=it[i].name}}</div>
+						{{ } }}
+					</script>
+				</div>-->
+			<!--</div>-->
+			<div id="content">
+				<div id="curdirectory">轮播列表</div>
+				<div>
+					<div class="main">
+						<div class="panel panel-default">
+							<div class="panel-body">
+									<div class="form-group">
+										<!--<label class="control-label" for="">赛事名称</label>-->
+										<!--<input type="text" class="form-control" id="search_actName">-->
+										<!--<button type="button" class="btn btn-primary" onclick="search()"><i class="fa fa-search"></i>查询</button>-->
+										<button id="addBtn" class="btn btn-default" onclick="add()">
+											<span class="glyphicon glyphicon-plus"></span>
+											 添加
+										</button>
+										<!--<button id="deleteBtn" class="btn btn-default" onclick="del()">
+											<span class="glyphicon glyphicon-remove"></span>
+											删除
+										</button>-->
+									</div>
+								<table id="dataGrid" style="min-width:500px;"></table>
+								</div>
+						</div>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+		
+		<div id="mergeDiv" class="mergeDiv">
+				<div class="mergeFormDiv">
+					<div class="addact" id="addAct">
+						<form style="margin-top:30px;" id="mergeForm" class="form-horizontal" method="post" enctype="multipart/form-data">
+							<input hidden="true" name="bannerId" class="bannerId" />
+							<div class="form-group spacing">
+								<div class="row">
+									<label class="col-md-3 control-label" for="link">轮播链接</label>
+									<div class="col-md-7">
+										<input class="form-control" type="text" name="link" id="link" placeholder="格式为http:// 或 https://"/>
+									</div>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<div class="row">
+									<label class="col-md-3 control-label" for="type">轮播类型<font color='red'>*</font></label>
+									<div class="col-md-7">
+										<select class="form-control" name="type" id="type">
+											<option value="1">英雄联盟</option>
+											<option value="2">王者荣耀</option>
+											<option value="3">绝地求生</option>
+											<option value="4">炉石传说</option>
+											<option value="5">实况足球</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							
+							<div class="form-group spacing">
+								<div class="row">
+									<label class="col-md-3 control-label" for="uploadname">轮播图片<font color='red'>*</font></label>
+									<div class="col-md-7" id="actimg">
+										<input id="uploadname" type="file" name="upload" onchange="return getuploadname()" style="display:none">
+										<label for="uploadname" class="btn btn-default updatehead">
+											选择图片
+										</label>
+										<input type="text" name="uploadFileName" id="uploadFileName" class="uploadFileName"/>
+										<!--<input type="file" id="uploadname" class="form-control" onchange="return getuploadname()" value="上传文件" name="upload" />-->
+									</div>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<div class="row">
+									<label class="col-md-3 control-label" for="type">图片状态<font color='red'>*</font></label>
+									<div class="col-md-7">
+										<select class="form-control" name="status" id="status">
+											<option value="1">启用</option>
+											<option value="2">禁用</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							
+							<div class="form-group spacing">
+								<div class="row">
+									<label class="col-md-3 control-label" for="description">图片描述</label>
+									<div class="col-md-7">
+										<textarea class="form-control" type="text" name="description" id="description">
+										</textarea>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+	</body>
+	<script src="../js/common/jquery.min.js"></script>
+	<script src="../js/common/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/common/bootstrap-table.js"></script>
+	<script type="text/javascript" src="../js/common/bootstrap-table-zh-CN.min.js"></script>
+	<script src="../js/common/doT.min.js"></script>
+	<script type="text/javascript" src="../js/common/layer/layer.js" ></script>
+	<script src="../js/common/common.js"></script>
+	<script src="../plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
+	<script src="../plugins/bootstrapValidator/js/bootstrapValidator.js"></script>
+	<script src="../plugins/bootstrapValidator/js/language/zh_CN.js"></script>
+	<script src="../js/bizjs/lunbo.js"></script>
+</html>

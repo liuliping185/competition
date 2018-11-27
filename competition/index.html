@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;"/>
+		<title>赛事列表</title>
+		<!--<link rel="stylesheet" media="screen" href="css/common/bootstrap.min.css"/>-->
+		<link rel="stylesheet" media="screen" href="css/common/bootstrap.css"/>
+		<link rel="stylesheet" href="plugins/bootstrap-table/bootstrap-table.css"/>
+		<link rel="stylesheet" href="css/common/bootstrap-datetimepicker.css"/>
+		<link rel="stylesheet" href="css/common/font-awesome.min.css"/>
+		<link rel="stylesheet" href="css/common/animate.min.css"/>
+		<link rel="stylesheet" href="css/common/prettify-1.0.css"/>
+		<!--<link rel="stylesheet" type="text/css" href="plugins/bootstrapValidator/css/bootstrapValidator.min.css"/>-->
+		<link rel="stylesheet" type="text/css" href="css/common/common.css"/>
+		<link rel="stylesheet" type="text/css" href="summernote/dist/summernote.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common/header.css"/>
+		<link rel="stylesheet" type="text/css" href="plugins/bootstrapValidator/css/bootstrapValidator.css"/>
+		<link rel="stylesheet" type="text/css" href="plugins/bootstrap-select/css/bootstrap-select.min.css"/>
+			
+	</head>
+	<body>
+			<div>
+				<iframe id="headeriframe" name="headeriframe" src="commonhtml/header.html"  frameborder= "0" width="100%">
+				</iframe>
+			</div>
+			
+			<div id="container">
+				<div id="content">
+					<div id="curdirectory">赛事列表</div>
+					<div>
+						<div class="main">
+							<div class="panel panel-default">
+								<div class="panel-body">
+								<!--<form method="post" id="formSearch" class="form-inline">-->
+									<div class="form-group">
+										<!--<label class="control-label" for="">赛事名称</label>-->
+										<!--<input type="text" class="form-control" id="search_actName">-->
+										<!--<button type="button" class="btn btn-primary" onclick="search()"><i class="fa fa-search"></i>查询</button>-->
+										<button id="addBtn" class="btn btn-default" onclick="add()">
+											<span class="glyphicon glyphicon-plus"></span>
+											 添加
+										</button>
+										<button id="deleteBtn" class="btn btn-default" onclick="del()">
+											<span class="glyphicon glyphicon-remove"></span>
+											删除
+										</button>
+									</div>
+								<!--</form>-->
+								<table id="dataGrid" style="min-width:500px;"></table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+	<div class="container">
+        <div class="row">
+        		<div id="mergeDiv">
+            <!-- form: -->
+            <section>
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="page-header">
+                        <h2>基本信息</h2>
+                    </div>
+
+                    <form id="mergeForm" method="post" class="form-horizontal">
+                    	 	<input hidden="true" name="actId" class="actId" />
+						
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">赛事名称<font color='red'>*</font></label>
+                            <div class="col-lg-5">
+                                <input type="text" class="form-control" name="actName" class="actName" id="actName" placeholder="请输入赛事名称" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">赛事图片<font color='red'>*</font></label>
+                            <div class="col-lg-8" id="actimg">
+                            		<input id="uploadname" type="file" name="upload" onchange="return getuploadname()" style="display:none">
+								<label for="uploadname" class="btn btn-default updatehead">
+									选择图片
+								</label>
+								<input type="text" name="uploadFileName" id="uploadFileName" class="uploadFileName"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">赛事类型<font color='red'>*</font></label>
+                            <div class="col-lg-5">
+                            		<select class="selectpicker" name="actType" id="actType">
+                            			<option value="1">个人赛</option>
+									<option value="2">团队赛</option>
+                            		</select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">赛事状态<font color='red'>*</font></label>
+                            <div class="col-lg-5">
+                           	 	<select class="selectpicker" name="actState" id="actState">
+                            			<option value="1">报名中</option>
+									<option value="2">报名结束</option>
+									<option value="3">游戏结束</option>
+                            		</select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">赛事时间<font color='red'>*</font></label>
+                            <div class="col-lg-5">
+                            		<input type='text' class="form-control actDate" onblur="time()" name="actDate" id="actDate" placeholder="请输入赛事时间"/>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">报名价格<font color='red'>*</font></label>
+                            <div class="col-lg-5">
+                            		<input type='number' class="form-control" name="actPrice" id="actPrice" placeholder="请输入报名价格" />
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">赛事分类<font color='red'>*</font></label>
+                            <div class="col-lg-5">
+                           	 	<select class="selectpicker" name="actCs" id="actCs">
+                            			<option value="1">线上赛事</option>
+									<option value="2">线下赛事</option>
+                            		</select>
+                            </div>
+                        </div>
+                        
+                         <div class="form-group">
+                            <label class="col-lg-3 control-label">备注</label>
+                            <div class="col-lg-8">
+                                <textarea type="text" rows="8" class="form-control" name="remark" id="remark" class="remark" placeholder="请输入备注"></textarea>
+                            </div>
+                        </div>
+                        
+                        
+                         <div class="page-header">
+	                        <h2>详情内容</h2>
+	                    </div>
+                        
+                        <div class="form-group">
+                            <textarea id="summernote" name="actDesc" class="actDesc"></textarea>
+                        </div>
+                        
+                        
+
+                        <!--<div class="form-group">
+                            <div class="col-lg-9 col-lg-offset-3">
+                                <button type="submit" class="btn btn-primary" name="signup" value="Sign up">Sign up</button>
+                                <button type="submit" class="btn btn-primary" name="signup2" value="Sign up 2">Sign up 2</button>
+                                <button type="button" class="btn btn-info" id="validateBtn">Manual validate</button>
+                                <button type="button" class="btn btn-info" id="resetBtn">Reset form</button>
+                            </div>
+                        </div>-->
+                    </form>
+                </div>
+            </section>
+            </div>
+            <!-- :form -->
+        </div>
+    </div>
+	</body>
+	<script src="js/common/jquery-1.11.3.min.js"></script>
+	<script src="js/common/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/common/bootstrap-table.js"></script>
+	<script type="text/javascript" src="js/common/bootstrap-table-zh-CN.min.js"></script>
+	<script type="text/javascript" src="plugins/bootstrap-select/js/bootstrap-select.min.js"></script>
+	<script src="js/common/doT.min.js"></script>
+	<script type="text/javascript" src="js/common/layer/layer.js" ></script>
+	<script src="js/common/common.js"></script>
+	<script src="summernote/dist/summernote.js"></script>
+	<script src="summernote/dist/lang/summernote-zh-CN.js"></script>    <!-- 中文-->
+	<script src="js/common/moment-with-locales.js"></script>
+	<script src="plugins/bootstrapValidator/js/bootstrapValidator.js"></script>
+	<script src="plugins/bootstrapValidator/js/language/zh_CN.js"></script>
+	<script src="js/common/bootstrap-datetimepicker.js"></script>
+	<script src="temporary/index.js"></script>
+	<script src="js/index.js"></script>
+
+	
+</html>

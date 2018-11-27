@@ -1,0 +1,17 @@
+body{
+	background-color: #38aae0;
+}
+
+#summernote{
+	position: absolute;
+}
+
+#submitbtn{
+	float: right;
+	margin: 0 0 10px 0;
+}
+
+.uploadFileName{
+	border: none;
+}
+

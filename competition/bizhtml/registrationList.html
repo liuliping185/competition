@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>报名列表</title>
+		<link rel="stylesheet" href="../css/common/bootstrap.min.css"/>
+		<link rel="stylesheet" href="../plugins/bootstrap-table/bootstrap-table.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/bizcss/registrationList.css"/>
+	</head>
+	<body>
+		<input hidden="hidden" id="signTeamname" />
+		<div>
+			<iframe id="headeriframe" src= "../commonhtml/header.html"  frameborder= "0" width="100%">
+			</iframe>
+		</div>
+		
+		<div id="container">
+			<!--<div id="left">-->
+				<!--<div class="leftsbtn childbtn">报名列表</div>-->
+				<!--<div id="lefttitlebtn">
+					<script id="list-tmpl" type="text/template">
+						{{ for (var i = 0; i < it.length; i++) { }}	
+							<div class="leftsbtn childbtn">{{=it[i].name}}</div>
+						{{ } }}
+					</script>
+				</div>-->
+			<!--</div>-->
+			<div id="content">
+				<div id="curdirectory">报名列表</div>
+				<div>
+					<div class="main">
+						<div class="panel panel-default">
+							<div class="panel-body">
+							<div class="form-group">
+								<form action="http://47.92.219.42:8012/game_web/sign_outExcle.action">
+									<input name="actId" class="actId" hidden="hidden" />
+									<input type="submit" class="btn btn-primary col-md-1" value="导出" />
+								</form>
+			                </div>
+							<table id="dataGrid" style="min-width:500px;"></table>
+							</div>
+						</div>
+					</div>
+					
+					<div class="group" onclick="grouping()">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../js/common/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/common/bootstrap-table.js"></script>
+	<script type="text/javascript" src="../js/common/bootstrap-table-zh-CN.min.js"></script>
+	<script src="../js/common/doT.min.js"></script>
+	<script type="text/javascript" src="../js/common/layer/layer.js" ></script>
+	<script src="../js/common/common.js"></script>
+	<script src="../js/bizjs/registrationList.js"></script>
+</html>
