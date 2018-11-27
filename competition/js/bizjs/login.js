@@ -13,12 +13,12 @@ function login(){
 //      contentType:false,
 		success : function(data) {
 			console.log(data);
-			if("success" == data.retCode){
+			// if("success" == data.retCode){
 				localStorage.setItem("islogin","1");
-//				window.location.href="index.html";
-			}else{
+				window.location.href="index.html";
+			// }else{
 				
-			}
+			// }
 		}
 	});
 }
